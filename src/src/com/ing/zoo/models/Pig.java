@@ -1,8 +1,10 @@
 package src.com.ing.zoo.models;
 
+import src.com.ing.zoo.models.interfaces.Trickable;
+
 import java.util.Random;
 
-public class Pig {
+public class Pig implements Trickable {
     public String name;
     public String helloText;
     public String eatText;

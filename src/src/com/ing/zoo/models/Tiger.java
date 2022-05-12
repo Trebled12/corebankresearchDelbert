@@ -1,8 +1,11 @@
 package src.com.ing.zoo.models;
 
+import src.com.ing.zoo.models.abstracts.Animal;
+import src.com.ing.zoo.models.interfaces.Trickable;
+
 import java.util.Random;
 
-public class Tiger {
+public class Tiger implements Trickable {
     public String name;
     public String helloText;
     public String eatText;
