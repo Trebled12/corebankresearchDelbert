@@ -1,5 +1,7 @@
 package src.com.ing.zoo;
 
+import src.com.ing.zoo.models.*;
+
 import java.util.Scanner;
 
 public class Zoo {
