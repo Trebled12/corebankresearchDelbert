@@ -5,4 +5,9 @@ public abstract class Animal {
     private String helloText;
     private String eatText;
 
+    public Animal(String name) {
+        this.name = name;
+    }
+
+    public abstract void sayHello();
 }
