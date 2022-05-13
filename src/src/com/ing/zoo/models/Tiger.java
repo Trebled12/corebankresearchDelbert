@@ -1,18 +1,21 @@
 package src.com.ing.zoo.models;
 
 import src.com.ing.zoo.models.abstracts.Animal;
+import src.com.ing.zoo.models.interfaces.EatsMeat;
 import src.com.ing.zoo.models.interfaces.Trickable;
 
 import java.util.Random;
 
-public class Tiger implements Trickable {
+public class Tiger extends Animal implements EatsMeat, Trickable {
     public String name;
     public String helloText;
     public String eatText;
     public String trick;
 
-    public Tiger()
-    {
+    public Tiger(String name) {
+        super(name);
+        this.helloText = super.helloText;
+        this.eatText = super.eatText;
     }
 
     public void sayHello()

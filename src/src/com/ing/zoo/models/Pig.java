@@ -1,17 +1,22 @@
 package src.com.ing.zoo.models;
 
+import src.com.ing.zoo.models.abstracts.Animal;
+import src.com.ing.zoo.models.interfaces.EatsLeaves;
+import src.com.ing.zoo.models.interfaces.EatsMeat;
 import src.com.ing.zoo.models.interfaces.Trickable;
 
 import java.util.Random;
 
-public class Pig implements Trickable {
+public class Pig extends Animal implements Trickable, EatsMeat, EatsLeaves {
     public String name;
     public String helloText;
     public String eatText;
     public String trick;
 
-    public Pig()
-    {
+    public Pig(String name) {
+        super(name);
+        this.helloText = super.helloText;
+        this.eatText = super.eatText;
     }
 
     public void sayHello()
