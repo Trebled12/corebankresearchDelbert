@@ -31,55 +31,53 @@ public class Zoo {
         Tiger wally = new Tiger("wally");
         animals.add(wally);
         Zebra marty = new Zebra("marty");
-        marty.name = "marty";
-
+        animals.add(marty);
 
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Voer uw command in: ");
 
-        String input = scanner.nextLine();
-        // hello command
 
-        String helloInput = "hello " + input;
+        while (true) {
+            System.out.print("Voer uw command in: ");
+            String input = scanner.nextLine();
 
-        // say hello
-        if (input.equals(commands[0])) {
-            animals.forEach(Animal::sayHello);
-        }
-        // say hello with one name
-        else if (input.split("hello*").length == 2) {
-            String name = input.split("hello*")[1].trim();
 
-            List<Animal> clone = animals.subList(0, animals.size() - 1);
-            clone.removeIf(animal -> !animal.name.equals(name));
-            if (clone.isEmpty()) {
-
-            } else {
-                clone.forEach(Animal::sayHello);
+            // say hello
+            if (input.equals(commands[0])) {
+                animals.forEach(Animal::sayHello);
             }
-        } else if (input.equals(commands[1])) {
-            animals.forEach(animal -> {
-                if (animal instanceof EatsLeaves) {
-                    ((EatsLeaves) animal).eatLeaves();
-                }
-            });
-        } else if (input.equals(commands[2])) {
-            animals.forEach(animal -> {
-                if (animal instanceof EatsMeat) {
-                    ((EatsMeat) animal).eatMeat();
-                }
-            });
-        } else if (input.equals(commands[3])) {
-            animals.forEach(animal -> {
-                if (animal instanceof Trickable) {
-                    ((Trickable) animal).performTrick();
-                }
-            });
-        }
-        else {
-            System.out.println("Unknown command: " + input);
-        }
+            // say hello with one name
+            else if (input.split("hello*").length == 2) {
+                String name = input.split("hello*")[1].trim();
 
+                List<Animal> clone = new ArrayList<>(animals);
+                clone.removeIf(animal -> !animal.name.equals(name));
+                if (clone.isEmpty()) {
+                    System.out.printf("%s is an invalid command%n", input);
+                } else {
+                    clone.forEach(Animal::sayHello);
+                }
+            } else if (input.equals(commands[1])) {
+                animals.forEach(animal -> {
+                    if (animal instanceof EatsLeaves) {
+                        ((EatsLeaves) animal).eatLeaves();
+                    }
+                });
+            } else if (input.equals(commands[2])) {
+                animals.forEach(animal -> {
+                    if (animal instanceof EatsMeat) {
+                        ((EatsMeat) animal).eatMeat();
+                    }
+                });
+            } else if (input.equals(commands[3])) {
+                animals.forEach(animal -> {
+                    if (animal instanceof Trickable) {
+                        ((Trickable) animal).performTrick();
+                    }
+                });
+            } else {
+                System.out.println("Unknown command: " + input);
+            }
 
+        }
     }
 }
