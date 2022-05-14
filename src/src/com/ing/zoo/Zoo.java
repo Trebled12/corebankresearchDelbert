@@ -22,16 +22,21 @@ public class Zoo {
 
         List<Animal> animals = new ArrayList<>();
 
-        Lion henk = new Lion("henk");
+        Animal henk = new Lion("henk");
         animals.add(henk);
-        Hippo elsa = new Hippo( "elsa");
+        Animal elsa = new Hippo( "elsa");
         animals.add(elsa);
-        Pig dora = new Pig("dora");
+        Animal dora = new Pig("dora");
         animals.add(dora);
-        Tiger wally = new Tiger("wally");
+        Animal wally = new Tiger("wally");
         animals.add(wally);
-        Zebra marty = new Zebra("marty");
+        Animal marty = new Zebra("marty");
         animals.add(marty);
+
+        Animal jumpy = new Grasshopper("jumpy");
+        animals.add(jumpy);
+        Animal birdie = new Pigeon("birdie");
+        animals.add(birdie);
 
         Scanner scanner = new Scanner(System.in);
 

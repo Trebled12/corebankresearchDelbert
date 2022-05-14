@@ -3,19 +3,21 @@ package src.com.ing.zoo.models;
 import src.com.ing.zoo.models.abstracts.Animal;
 import src.com.ing.zoo.models.interfaces.EatsLeaves;
 
-public class Hippo extends Animal implements EatsLeaves {
+public class Grasshopper extends Animal implements EatsLeaves {
 
-    public Hippo(String name) {
+    public Grasshopper(String name) {
         super(name);
     }
 
+    @Override
     public void sayHello() {
-        helloText = "splash";
+        helloText = "hop hop";
         System.out.println(helloText);
     }
 
+    @Override
     public void eatLeaves() {
-        eatText = "munch munch lovely";
+        eatText = "crop crop";
         System.out.println(eatText);
     }
 }
